@@ -1,4 +1,8 @@
 {
+<<<<<<< HEAD
   "video": false,
   "screenshot": false
+=======
+  "video": false
+>>>>>>> e00d687 (chore: add and config cypress)
 }
