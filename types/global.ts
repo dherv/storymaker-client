@@ -4,3 +4,12 @@ export interface Novel {
   title: string;
   pages: Lines[];
 }
+
+export interface NovelMeta {
+  id: string;
+  uuid: string;
+  category: string;
+  title: string;
+  filename: string;
+  synopsis: string;
+}

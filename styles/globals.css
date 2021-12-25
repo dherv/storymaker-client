@@ -3,17 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+  h1,
   h3 {
     @apply font-bold;
   }
   header,
   footer,
   main {
-    @apply px-8 py-4;
+    @apply px-12 py-6;
   }
 }
 @layer components {
   .novel-paragraph {
-    @apply font-serif leading-6;
+    @apply antialiased font-serif leading-6 whitespace-pre-line;
   }
 }
