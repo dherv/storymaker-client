@@ -1,28 +1,44 @@
 import Link from 'next/link';
 import { FC } from 'react';
-import { Novel } from '../../types/global';
+import {
+  ClockIcon,
+  EyeIcon,
+  PencilIcon,
+  ThumbUpIcon,
+} from '@heroicons/react/outline';
+import { NovelMeta } from '../../types/global';
+import { NovelDetail } from './NovelDetail';
+import { Tag } from './Tag';
 
-export const NovelItem: FC<{ novel: Novel }> = ({ novel }) => {
+export const NovelItem: FC<{ novel: NovelMeta }> = ({ novel }) => {
   return (
-    <li className="border-b-2 border-indigo-400" key={novel.id}>
-      <div className="flex">
-        {/* <Image src={cyber} alt="random picture for this novel" /> */}
-        <div>
-          <h3 className="antialiased capitalize text-xl mb-4">{novel.title}</h3>
-          <div className="mb-4">
-            {novel.pages[0].slice(0, 8).map((line, index) => (
-              <p className="novel-paragraph" key={index}>
-                {line}
-              </p>
-            ))}
+    <li
+      className="max-w-3xl my-4 p-6 rounded shadow-md hover:cursor-pointer"
+      key={novel.id}
+    >
+      <Link href={`/novel/${novel.id}/page/1`}>
+        <div className="flex">
+          <div>
+            <h3 className="antialiased capitalize text-3xl">{novel.title}</h3>
+            <p className="mt-1 mb-4 text-gray-400 text-xs font-light">
+              25 Decembre 2021
+            </p>
+            <div className="mb-4 text-sm font-light">
+              <p>{novel.synopsis}</p>
+            </div>
+            <Tag text={novel.category} />
+            <ul className="flex mt-8">
+              <NovelDetail text="views" data={novel.views} Icon={EyeIcon} />
+              <NovelDetail text="likes" data={novel.likes} Icon={ThumbUpIcon} />
+              <NovelDetail text="words" data={novel.words} Icon={PencilIcon} />
+              <NovelDetail
+                text="read"
+                data={`${novel.readTime / 60}min`}
+                Icon={ClockIcon}
+              />
+            </ul>
           </div>
         </div>
-      </div>
-
-      <Link href={`/novel/${novel.id}/page/1`}>
-        <a className="underline decoration-sky-500 text-sky-500">
-          show more...
-        </a>
       </Link>
     </li>
   );

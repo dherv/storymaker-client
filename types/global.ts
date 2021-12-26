@@ -6,10 +6,15 @@ export interface Novel {
 }
 
 export interface NovelMeta {
-  id: string;
+  id: number;
   uuid: string;
   category: string;
   title: string;
   filename: string;
   synopsis: string;
+  likes: number;
+  views: number;
+  pages: number;
+  words: number;
+  readTime: number;
 }
