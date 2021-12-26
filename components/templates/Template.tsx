@@ -3,9 +3,9 @@ import { Header } from '../base/Header';
 
 export const Template: FC = ({ children }) => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="w-screen min-h-screen bg-gray-50">
       <Header></Header>
-      <main>{children}</main>
+      <main className="mx-auto md:w-full ">{children}</main>
       <footer>copywrite this awesome content</footer>
     </div>
   );

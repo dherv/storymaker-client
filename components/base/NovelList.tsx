@@ -4,7 +4,7 @@ import { NovelItem } from './NovelItem';
 
 export const NovelList: FC<{ novels: NovelMeta[] }> = ({ novels }) => {
   return (
-    <ul className="max-w-5xl mx-auto">
+    <ul>
       {novels.map((novel) => (
         <NovelItem key={novel.id} novel={novel} />
       ))}

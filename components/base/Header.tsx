@@ -4,7 +4,7 @@ import { Title } from './Title';
 
 export const Header: FC = () => {
   return (
-    <header className="flex justify-between">
+    <header className="flex justify-between w-screen">
       <Title></Title>
       <Nav></Nav>
     </header>

@@ -13,7 +13,7 @@ import { Tag } from './Tag';
 export const NovelItem: FC<{ novel: NovelMeta }> = ({ novel }) => {
   return (
     <li
-      className="max-w-3xl my-4 p-6 rounded shadow-md hover:cursor-pointer"
+      className="md:max-w-3xl mx-auto my-4 p-6 bg-white rounded shadow-md hover:cursor-pointer"
       key={novel.id}
     >
       <Link href={`/novel/${novel.id}/page/1`}>
@@ -27,7 +27,7 @@ export const NovelItem: FC<{ novel: NovelMeta }> = ({ novel }) => {
               <p>{novel.synopsis}</p>
             </div>
             <Tag text={novel.category} />
-            <ul className="flex mt-8">
+            <ul className="flex flex-wrap mt-6">
               <NovelDetail text="views" data={novel.views} Icon={EyeIcon} />
               <NovelDetail text="likes" data={novel.likes} Icon={ThumbUpIcon} />
               <NovelDetail text="words" data={novel.words} Icon={PencilIcon} />
