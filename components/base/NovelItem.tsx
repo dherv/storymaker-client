@@ -11,6 +11,7 @@ import { NovelDetail } from './NovelDetail';
 import { Tag } from './Tag';
 
 export const NovelItem: FC<{ novel: NovelMeta }> = ({ novel }) => {
+  console.log(`/novel/${novel.id}/page/1`);
   return (
     <li
       className="md:max-w-3xl mx-auto my-4 p-6 bg-white rounded shadow-md hover:cursor-pointer"
@@ -30,10 +31,14 @@ export const NovelItem: FC<{ novel: NovelMeta }> = ({ novel }) => {
             <ul className="flex flex-wrap mt-6">
               <NovelDetail text="views" data={novel.views} Icon={EyeIcon} />
               <NovelDetail text="likes" data={novel.likes} Icon={ThumbUpIcon} />
-              <NovelDetail text="words" data={novel.words} Icon={PencilIcon} />
+              <NovelDetail
+                text="words"
+                data={novel.word_count}
+                Icon={PencilIcon}
+              />
               <NovelDetail
                 text="read"
-                data={`${novel.readTime / 60}min`}
+                data={`${Math.round(novel.word_count / 200)} min`}
                 Icon={ClockIcon}
               />
             </ul>

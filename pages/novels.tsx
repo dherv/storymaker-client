@@ -12,7 +12,6 @@ export async function getStaticProps() {
   // You can use any data fetching library
   const res = await fetch("http://localhost:8080/api/meta");
   const novels = await res.json();
-  console.log({ novels });
   // By returning { props: { novels } }, the Blog component
   // will receive `novels` as a prop at build time
   return {

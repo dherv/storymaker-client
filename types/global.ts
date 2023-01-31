@@ -14,7 +14,7 @@ export interface NovelMeta {
   synopsis: string;
   likes: number;
   views: number;
-  pages: number;
-  words: number;
+  page_count: number;
+  word_count: number;
   readTime: number;
 }
